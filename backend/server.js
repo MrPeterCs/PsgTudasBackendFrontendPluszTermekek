@@ -13,13 +13,9 @@ const PORT = 3001
 
 app.post("/api/register", async(req, res) => {
     try {
-        //itt adjuk meg, hogy a frontendről mit küldtünk a body-ban a backendre
         const {name, email, password} = req.body
-        //lekérdezük, hogy van-e ilyen regisztrált felhasználó
         const [users] = await db.query("SELECT id FROM users WHERE email = ?", [email])
-        //ha a lekérdezés sikeres volt, akkor a users tömbben már van adat, mivel van benne, ezért a hossza > 0 -> email foglalt
         if(users.length > 0) return res.status(400).json({message: "Ez az email cím már foglalt!"})
-        //ha nem foglalt az email, akkor password hash és insert into az adatbázisba
         const hashedPassword = await bcrypt.hash(password, 10)
         await db.query("INSERT INTO users (name, email, password) VALUES (?,?,?)", [name, email, hashedPassword])
 
