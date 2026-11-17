@@ -156,3 +156,6 @@ A repositoryban található feladatok **gyakorlási segédanyagok**, amelyek az 
 A feladatok ismerete és megértése ajánlott, azonban a repository tartalma **nem jelenti azt, hogy minden itt szereplő feladat biztosan része lesz a számonkérésnek**.
 
 **Sok sikert a felkészüléshez! 🚀**
+=======
+# PsgTudasBackendFrontendPluszTermekek
+>>>>>>> af53e710905a27929244cc4b509f079329dde7f7
